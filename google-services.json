@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1012693885749",
+    "firebase_url": "https://notifydemo-c5e40.firebaseio.com",
+    "project_id": "notifydemo-c5e40",
+    "storage_bucket": "notifydemo-c5e40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012693885749:android:bf12c36a2bba0a38",
+        "android_client_info": {
+          "package_name": "com.spectrus.pushNotify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012693885749-gl5k4j6mijmh5d7cdh0r9rea7g1fjpo6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-zC8b1IQzY_d0Cm8nTgGE_q4JO7drxlU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
