@@ -1,12 +1,14 @@
 This Project is a simple POC for push notifications in ionic 3.
+
 The blog made by Filip Jerga (https://medium.freecodecamp.org/@filipjerga), helped a lot.
+
 Here is the link, https://medium.freecodecamp.org/how-to-get-push-notifications-working-with-ionic-4-and-firebase-ad87cc92394e
 
 Refer to above blog and the package.json file in this repository for dependencies and plugins with their respective versions, which worked fine for me.
 
 It has functions for both simple message notifications and when user subscribe to particular topic.
 
-For IOS ->
+For IOS Build ->
 
     1. sudo ionic cordova platform add ios
     
@@ -29,11 +31,11 @@ For IOS ->
         d) Click on Done and then you can build.
 
 
-For Android ->
-    ionic cordova platform add android
-    ionic cordova build android
-    <!-- If Device is Connected, run following command -->
-    ionic cordova run android --device
+For Android Build->
+
+    1. ionic cordova platform add android
+
+    2. ionic cordova build android
 
 
 Server side api for sending push notification:
