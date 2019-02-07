@@ -1,11 +1,40 @@
-for ios devices, while building in Xcode change the settings. Follow the steps below:
+This Project is a simple POC for push notifications in ionic 3.
+The blog made by Filip Jerga (https://medium.freecodecamp.org/@filipjerga), helped a lot.
+Here is the link, https://medium.freecodecamp.org/how-to-get-push-notifications-working-with-ionic-4-and-firebase-ad87cc92394e
 
-1. open your project in Xcode
-2. Click on File and then Click on Workspace settings
-3. click on Build System under "Per-User Workspace Settings" and choose "Legacy Build System" from Dropdown.
-4. Click on Done and then you can build.
+Refer to above blog and the package.json file in this repository for dependencies and plugins with their respective versions, which worked fine for me.
 
-for android devices, follow usual command: "ionic cordova build android"
+It has functions for both simple message notifications and when user subscribe to particular topic.
+
+For IOS ->
+
+    1. sudo ionic cordova platform add ios
+    
+        ** If you get Error like "File already exists at destination ...../your_project_directory/platforms/ios/../Resources/GoogleService-Info.plist" then follow these steps:
+
+        a) Remove firebase plugins from Plugins folder, and remove the above file which throws error.
+        b) Add the plugin again, run "sudo ionic cordova plugin add cordova-plugin-firebase"
+
+        It should solve the error.
+    
+    2. sudo ionic cordova build ios
+
+    3. open your project in xcode and follow below steps
+
+    for ios devices, while building in Xcode change the settings. Follow the steps below:
+
+        a) open your project in Xcode
+        b) Click on File and then Click on Workspace settings
+        c) click on Build System under "Per-User Workspace Settings" and choose "Legacy Build System" from Dropdown.
+        d) Click on Done and then you can build.
+
+
+For Android ->
+    ionic cordova platform add android
+    ionic cordova build android
+    <!-- If Device is Connected, run following command -->
+    ionic cordova run android --device
+
 
 Server side api for sending push notification:
 
