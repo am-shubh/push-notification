@@ -25,6 +25,10 @@ export class FcmService {
     this.saveToken(token);
   }
 
+  public async subscribeToTopic(topic){
+    await this.firebase.subscribe(topic);
+  }
+
   private saveToken(token) {
     if (!token) return;
 

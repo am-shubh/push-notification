@@ -11,7 +11,7 @@ Server side api for sending push notification:
 
 I have used firebase firestore as backend to store device tokens and Admin FCM API for sending notifications.
 
-Here is the function:
+Here is the function for sending to each registered device individually:
 
     exports.notifyUsers = functions.https.onRequest((req, res) => {
         var msg = req.body.message;
@@ -44,5 +44,55 @@ Here is the function:
                 });
             });
 
+
+    });
+
+
+
+Here is the function for sending notification for subscribed topic:
+
+    exports.notifyUsers = functions.https.onRequest((req, res) => {
+        var title = req.body.title;
+        var msg = req.body.message;
+        
+        var topic = "new_blog";
+
+        var message = {
+            apns: {
+                headers: {
+                'apns-priority': '10'
+                },
+                payload: {
+                aps: {
+                    alert: {
+                    title: title,
+                    body: msg,
+                    },
+                    badge: 42,
+                }
+                }
+            },
+            android: {
+            ttl: 3600 * 1000, // 1 hour in milliseconds
+            priority: 'normal',
+            notification: {
+                    title: title,
+                    body: msg
+                }
+            },
+            topic: topic
+        };
+
+        admin.messaging().send(message)
+        .then((response) => {
+            return res.status(200).json({
+                "success": true, "message": "Push Notification Sent Successfully"
+            });
+        })
+        .catch((err) => {
+            return res.status(500).json({
+                "success": false, "message": err
+            });
+        });
 
     });

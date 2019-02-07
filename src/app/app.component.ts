@@ -29,6 +29,7 @@ export class MyApp {
 
   private notificationSetup() {
     this.fcm.getToken();
+    this.fcm.subscribeToTopic('new_blog');
     this.fcm.onNotifications().subscribe(
       (msg) => {
         if (this.platform.is('ios')) {
